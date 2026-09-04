@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: image-generation-ai
+    runtime: docker
+    repo: https://github.com/donmartialcrashgame-sudo/image-generation-ai
+    branch: main
+    dockerfilePath: ./Dockerfile
+    plan: standard
+    region: frankfurt
+    autoDeploy: true
+    healthCheckPath: /health
+    envVars:
+      - key: MODEL_ID
+        value: segmind/tiny-sd
+      - key: IMAGE_API_KEY
+        sync: false
+      - key: DEFAULT_STEPS
+        value: "12"
+      - key: MAX_STEPS
+        value: "24"
+      - key: DEFAULT_WIDTH
+        value: "512"
+      - key: DEFAULT_HEIGHT
+        value: "512"
+      - key: MAX_WIDTH
+        value: "768"
+      - key: MAX_HEIGHT
+        value: "768"
