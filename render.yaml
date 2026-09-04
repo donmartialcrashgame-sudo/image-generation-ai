@@ -5,7 +5,7 @@ services:
     repo: https://github.com/donmartialcrashgame-sudo/image-generation-ai
     branch: main
     dockerfilePath: ./Dockerfile
-    plan: standard
+    plan: pro
     region: frankfurt
     autoDeploy: true
     healthCheckPath: /health
